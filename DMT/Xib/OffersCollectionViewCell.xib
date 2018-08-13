@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="OffersCollectionViewCell" customModule="DMT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="76"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="399" height="76"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OfferCellBG" translatesAutoresizingMaskIntoConstraints="NO" id="BxU-Wg-Kzx">
+                        <rect key="frame" x="0.0" y="0.0" width="399" height="76"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SumCircle" translatesAutoresizingMaskIntoConstraints="NO" id="zki-Ot-91R">
+                        <rect key="frame" x="0.0" y="-2" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="U93-gl-STB"/>
+                            <constraint firstAttribute="width" secondItem="zki-Ot-91R" secondAttribute="height" multiplier="1:1" id="glc-j2-l6v"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="specializare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkO-La-I19">
+                        <rect key="frame" x="80" y="0.0" width="90.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsi-dS-Zby">
+                        <rect key="frame" x="80" y="55" width="23" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pret" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8u-Vc-LWl">
+                        <rect key="frame" x="24.5" y="27.5" width="31" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titlu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-N4-ZJp">
+                        <rect key="frame" x="80" y="27.5" width="29" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="BxU-Wg-Kzx" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="0EI-7D-tPH"/>
+                <constraint firstAttribute="bottom" secondItem="Lsi-dS-Zby" secondAttribute="bottom" id="BG4-oM-6ir"/>
+                <constraint firstItem="NJg-N4-ZJp" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="FNv-Sr-Ntp"/>
+                <constraint firstItem="BxU-Wg-Kzx" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="HbV-7u-xS2"/>
+                <constraint firstItem="Lsi-dS-Zby" firstAttribute="leading" secondItem="zki-Ot-91R" secondAttribute="trailing" id="Pzn-ns-CXG"/>
+                <constraint firstItem="BxU-Wg-Kzx" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="TCR-Wm-b1V"/>
+                <constraint firstItem="LkO-La-I19" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aGv-WK-D0H"/>
+                <constraint firstItem="LkO-La-I19" firstAttribute="leading" secondItem="zki-Ot-91R" secondAttribute="trailing" id="fKg-gn-CH9"/>
+                <constraint firstItem="zki-Ot-91R" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hkF-Rg-MA9"/>
+                <constraint firstItem="g8u-Vc-LWl" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="mA9-3C-ygf"/>
+                <constraint firstItem="NJg-N4-ZJp" firstAttribute="leading" secondItem="zki-Ot-91R" secondAttribute="trailing" id="nfE-wY-7YP"/>
+                <constraint firstItem="g8u-Vc-LWl" firstAttribute="centerX" secondItem="zki-Ot-91R" secondAttribute="centerX" id="v8C-HU-dlP"/>
+                <constraint firstItem="BxU-Wg-Kzx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xRf-Lp-LMj"/>
+                <constraint firstItem="zki-Ot-91R" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="zU0-le-iyh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="399" height="76"/>
+            <connections>
+                <outlet property="headerLabel" destination="NJg-N4-ZJp" id="JT2-Sn-qIA"/>
+                <outlet property="jobLabel" destination="LkO-La-I19" id="Qrp-W2-18t"/>
+                <outlet property="locationLabel" destination="Lsi-dS-Zby" id="Hdt-az-q56"/>
+                <outlet property="priceLabel" destination="g8u-Vc-LWl" id="TZc-We-a31"/>
+            </connections>
+            <point key="canvasLocation" x="-149.5" y="22"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="OfferCellBG" width="414" height="81"/>
+        <image name="SumCircle" width="70" height="70"/>
+    </resources>
+</document>

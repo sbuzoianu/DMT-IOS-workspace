@@ -7,7 +7,13 @@
 //
 
 import UIKit
-import Firebase
+import UIKit
+import FirebaseCore
+import FirebaseMessaging
+import FirebaseInstanceID
+
+import UserNotifications
+
 import UserNotifications
 
 @UIApplicationMain

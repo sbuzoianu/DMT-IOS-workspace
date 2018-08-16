@@ -132,12 +132,15 @@ class LoginViewController: UIViewController {
             UserDefaults.standard.set(passwordField.text, forKey: UserDefaultsKeys.savedPassword)
             print("S-a salvat contul in userdefaults")
         }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let token = appDelegate.instanceIDTokenMessage
         
         var params = Dictionary<String, String>();
         params["mail"] = mail
         params["parola"] = parola
         params["request"] = ServerRequestConstants.JSON.LOGIN_REQUEST_NUMBER
-        
+        params["token"] = token
+
         Services.loginService(params: params) { [weak self] result in
             switch result {
             case .success(let json):

@@ -11,13 +11,10 @@ import UIKit
 import FirebaseCore
 import FirebaseMessaging
 import FirebaseInstanceID
-
-import UserNotifications
-
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate  {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow? 
     var instanceIDTokenMessage: String?
@@ -27,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let message = "google.c.a.c_l"
     let aps = "aps"
     let receivedNotification = Notification.Name(rawValue:"NotificationReceived")
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -141,7 +137,7 @@ extension AppDelegate:MessagingDelegate {
                 print("Error fetching remote instange ID: \(error)")
             } else if let result = result {
                 print(" --- Remote instance ID token: \(result.token) --- ")
-                self.instanceIDTokenMessage  = "Remote InstanceID token: \(result.token)"
+                self.instanceIDTokenMessage  = "\(result.token)"
             }
         }
         connectToFirebase()
@@ -153,4 +149,17 @@ extension AppDelegate:MessagingDelegate {
     }
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // notificarea a venit atunci cand aplicatia este in BACKGROUND
+        print("--- S-a apasat pe notificare, acum ar trebui implementantat ce anume se doreste dupa ce s-a dat click pe notificare ---")
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // notificarea a venit atunci cand aplicatia este in FOREGROUND
+        print("S-a primit notificare in foreground, definim aici actiunea care se va efectua in foregorund")
+        
 
+    }
+    
+}

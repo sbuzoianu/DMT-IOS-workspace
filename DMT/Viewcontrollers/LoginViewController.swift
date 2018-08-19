@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+            locationManager.stopUpdatingLocation()
         }
         if UserDefaults.standard.bool(forKey: UserDefaultsKeys.rememberSwitchState) == true{
             emailField.text = UserDefaults.standard.string(forKey: UserDefaultsKeys.savedEmail)
@@ -111,6 +112,7 @@ class LoginViewController: UIViewController {
                     print("completion without tap")
                 }
             }
+            self.loginButton.isEnabled = true
             return
         }
         if (emailField.text?.contains("@"))! == false && emailField.text?.contains(".") == false{
@@ -121,6 +123,7 @@ class LoginViewController: UIViewController {
                     print("completion without tap")
                 }
             }
+            self.loginButton.isEnabled = true
             return
         }
         
@@ -136,6 +139,7 @@ class LoginViewController: UIViewController {
         var params = Dictionary<String, String>();
         params["mail"] = mail
         params["parola"] = parola
+        params["SO"] = "IOS"
         params["request"] = ServerRequestConstants.JSON.LOGIN_REQUEST_NUMBER
         
         Services.loginService(params: params) { [weak self] result in
@@ -170,10 +174,11 @@ class LoginViewController: UIViewController {
                 
             case .error(let errorString):
                 print("errorString = \(errorString)")
-                
+             
                 break
                 
             }
+          
             
         }
         

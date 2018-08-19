@@ -32,11 +32,11 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         self.navigationController?.view.backgroundColor = .clear
         
         let secondTab = self.tabBarController?.viewControllers![1] as! ProfileViewController
-        secondTab.userDetails = userDetails
+        secondTab.userDetails = userDetails	
         prepareCollectionView()
 
         // oferte aduse
-        
+        self.noOffersLabel.text = ""
         getAllOffersFromServer()
      
     }
@@ -140,7 +140,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
     
     
     func dateButtonClicked() {
-        if offerNumber != nil {
+        if offerNumber == nil {
             self.noOffersLabel.text = ""
         } else {
             self.noOffersLabel.text = "No Offers"

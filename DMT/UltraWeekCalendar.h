@@ -20,6 +20,8 @@
 }
 
 - (void)selectedDate:(int)dayOffset;
+- (void)selectDay:(int)dayOffsetValue;
+
 
 @property (strong, nonatomic) id<UltraWeekCalendarDelegate> delegate;
 

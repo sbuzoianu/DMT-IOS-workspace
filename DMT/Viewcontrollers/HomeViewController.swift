@@ -26,7 +26,6 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         print("HomeViewController - viewDidLoad")
         super.viewDidLoad()
         
-        prepareCalendar()
         
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
@@ -43,6 +42,8 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         print("HomeViewController - viewWillAppear")
+        prepareCalendar()
+
         if let _ = userDetails {
             print("HomeViewController - userDetails NOT NIL ")
         }
@@ -59,9 +60,14 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         
         calendar?.startDate = Date()
         calendar?.endDate = someDateTime
-        calendar?.selectedDate = Date()
-        self.view.addSubview(calendar!)
         
+        if let currentDate = calendar?.startDate {
+            print("selectedDate  = \(currentDate)")
+            calendar?.selectedDate = currentDate
+            
+        }
+        self.view.addSubview(calendar!)
+
         // customizare calendar:
 
         calendar?.backgroundColor = UIColor(rgb:0xCCCCCC)
@@ -120,7 +126,8 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
                             print(self?.offerDetails[1].numeLocatie as Any)
                             
                             self?.collectionView.reloadData()
-                            
+                            self?.calendar?.selectDay(4000)
+
                         }
                     }
                 default:

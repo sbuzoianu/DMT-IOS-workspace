@@ -74,10 +74,12 @@
     dateFormatter.dateFormat=@"MMM";
     NSString *monthString = [[dateFormatter stringFromDate:self.startDate] uppercaseString];
     
-    NSLog(@"dateFormatter.locale : %@", dateFormatter.locale);
-    NSLog(@"self.startDate: %@", self.startDate);
-    NSLog(@"self.endDate: %@", self.endDate);
-    NSLog(@"monthString: %@", monthString);
+    NSLog(@"dateFormatter.locale = %@", dateFormatter.locale);
+    NSLog(@"self.startDate = %@", self.startDate);
+    NSLog(@"self.endDate = %@", self.endDate);
+    NSLog(@"self.selectedDate = %@", self.selectedDate);
+
+    NSLog(@"monthString = %@", monthString);
     
     fixedMonthLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.fixedMonthLabelWidth, contentView.frame.size.height)];
     fixedMonthLabel.text = monthString;
@@ -97,6 +99,7 @@
     [self.dayScrollView setShowsHorizontalScrollIndicator:FALSE];
     [self.dayScrollView setShowsVerticalScrollIndicator:FALSE];
     [self.dayScrollView setBackgroundColor:self.dayScrollBGColor];
+
     [contentView addSubview:self.dayScrollView];
     
     monthContentWidth = fixedMonthLabel.frame.size.width;
@@ -120,10 +123,14 @@
         if (previousMonth == currentMonth) {
             //Print only day
             [self renderDay:i withDate:printedDate];
+
+
         } else {
             //Print Month + first day
             [self renderMonth:i];
             [self renderDay:i withDate:printedDate];
+
+
         }
         
     }
@@ -216,6 +223,7 @@
     dayBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, dayContentView.frame.size.width, dayContentView.frame.size.height)];
     dayBtn.tag = index+4000;
     [dayBtn addTarget:self action:@selector(selectedDay:) forControlEvents:UIControlEventTouchUpInside];
+//    NSLog(@"sender tag = %d", (int)[dayBtn tag]);
     [dayContentView addSubview:dayBtn];
 }
 
@@ -274,8 +282,37 @@
 
 #pragma mark - selected Date
 
+- (void)selectDay:(int)dayOffsetValue
+{
+
+    int dayOffset = dayOffsetValue-4000;
+    NSLog(@"selectDay dayOffset =  %d", dayOffset);
+
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setDay:dayOffset];
+    printedDate = [gregorianCalendar dateByAddingComponents:offsetComponents toDate:self.startDate options:0];
+    dateFormatter.dateFormat=@"yyyy-MM-dd'T'HH:mm:ssZ";
+    NSString *selectedDayStr = [dateFormatter stringFromDate:printedDate];
+    
+    [[self viewWithTag:selectedDay] setBackgroundColor:[UIColor clearColor]];
+    [[self viewWithTag:selectedDay+1000] setTextColor:self.dayNameTextColor];
+    [[self viewWithTag:selectedDay+2000] setTextColor:self.dayNumberTextColor];
+    
+    [[self viewWithTag:dayOffset+1000] setBackgroundColor:self.daySelectedBGColor];
+    [[self viewWithTag:dayOffset+2000] setTextColor:self.dayNameSelectedTextColor];
+    [[self viewWithTag:dayOffset+3000] setTextColor:self.dayNumberSelectedTextColor];
+    
+    selectedDay = dayOffset+1000;
+    self.selectedDate = printedDate;
+    [[NSUserDefaults standardUserDefaults] setObject:selectedDayStr forKey:@"selectedDayStr"];
+    [delegate dateButtonClicked];
+    NSLog(@"selectDay 3 %@", selectedDayStr);
+
+}
+
 - (void)selectedDate:(int)dayOffset
 {
+
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     [offsetComponents setDay:dayOffset];
     printedDate = [gregorianCalendar dateByAddingComponents:offsetComponents toDate:self.startDate options:0];
@@ -292,7 +329,7 @@
             self.selectedDate = nil;
             [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"selectedDayStr"];
             [delegate dateButtonClicked];
-            NSLog(@"selectedDay %@", selectedDayStr);
+            NSLog(@"selectedDate %@", selectedDayStr);
             
         } else {
             [[self viewWithTag:dayOffset+1000] setBackgroundColor:self.daySelectedBGColor];
@@ -303,7 +340,7 @@
             self.selectedDate = printedDate;
             [[NSUserDefaults standardUserDefaults] setObject:selectedDayStr forKey:@"selectedDayStr"];
             
-            NSLog(@"selectedDay %@", selectedDayStr);
+            NSLog(@"selectedDate %@", selectedDayStr);
         }
     } else {
         [[self viewWithTag:selectedDay] setBackgroundColor:[UIColor clearColor]];
@@ -318,7 +355,7 @@
         self.selectedDate = printedDate;
         [[NSUserDefaults standardUserDefaults] setObject:selectedDayStr forKey:@"selectedDayStr"];
         
-        NSLog(@"selectedDay %@", selectedDayStr);
+        NSLog(@"selectedDate %@", selectedDayStr);
     }
 }
 

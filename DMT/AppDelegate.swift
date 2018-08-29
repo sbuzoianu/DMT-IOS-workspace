@@ -141,7 +141,7 @@ extension AppDelegate:MessagingDelegate {
                 print("Error fetching remote instange ID: \(error)")
             } else if let result = result {
                 print(" --- Remote instance ID token: \(result.token) --- ")
-                self.instanceIDTokenMessage  = "Remote InstanceID token: \(result.token)"
+                self.instanceIDTokenMessage  = "\(result.token)"
             }
         }
         connectToFirebase()

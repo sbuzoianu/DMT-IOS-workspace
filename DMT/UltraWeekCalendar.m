@@ -305,7 +305,7 @@
     selectedDay = dayOffset+1000;
     self.selectedDate = printedDate;
     [[NSUserDefaults standardUserDefaults] setObject:selectedDayStr forKey:@"selectedDayStr"];
-    [delegate dateButtonClicked];
+//    [delegate dateButtonClicked];
     NSLog(@"selectDay 3 %@", selectedDayStr);
 
 }

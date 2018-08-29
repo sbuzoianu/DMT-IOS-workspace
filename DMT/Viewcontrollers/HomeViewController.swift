@@ -127,6 +127,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
                             
                             self?.collectionView.reloadData()
                             self?.calendar?.selectDay(4000)
+                            
 
                         }
                     }
@@ -147,6 +148,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
     
     
     func dateButtonClicked() {
+        getAllOffersFromServer()
         if offerNumber == nil {
             self.noOffersLabel.text = ""
         } else {
@@ -154,6 +156,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         }
         print("dateClicked")
         DispatchQueue.main.async {
+            
             self.collectionView.reloadData()
         }
     }

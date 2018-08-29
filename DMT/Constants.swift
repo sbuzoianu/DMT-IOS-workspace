@@ -17,8 +17,6 @@ struct UserDefaultsKeys {
 }
 
 
-
-
 struct Constraints{
     
     static let topBarHeight = UIApplication.shared.statusBarFrame.size.height + 44.0

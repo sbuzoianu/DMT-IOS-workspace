@@ -140,6 +140,7 @@ class LoginViewController: UIViewController {
         params["parola"] = parola
         params["request"] = ServerRequestConstants.JSON.LOGIN_REQUEST_NUMBER
         params["token"] = token
+        params["SO"] = "IOS"
 
         Services.loginService(params: params) { [weak self] result in
             switch result {

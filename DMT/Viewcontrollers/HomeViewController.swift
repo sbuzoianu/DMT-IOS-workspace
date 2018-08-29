@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
     var offerDetails: [OffersDetail] = []
     var offerNumber: Int?
     let reuseIdentifier = "cell"
-
+    
     var calendar : UltraWeekCalendar? = nil
     
     override func viewDidLoad() {

@@ -114,13 +114,13 @@ extension OfferDtailsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if cellDataArray[indexPath.row].cell == OfferDetailsTableViewCell1.ReuseIdentifier {
-            return 128
+            return 328
         }
         else if cellDataArray[indexPath.row].cell == OfferDetailsTableViewCell2.ReuseIdentifier {
-            return 180
+            return 380
         }
         else {
-            return 128
+            return 328
         }
     }
 }

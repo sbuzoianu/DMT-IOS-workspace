@@ -12,6 +12,8 @@
 @protocol UltraWeekCalendarDelegate <NSObject>
 @optional
 - (void)dateButtonClicked;
+
+
 @end
 
 @interface UltraWeekCalendar : UIView <UIScrollViewDelegate>

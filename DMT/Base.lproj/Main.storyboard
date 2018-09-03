@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4lW-Xo-tdd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -364,12 +364,28 @@
                         <outlet property="passwordField" destination="gLq-0Y-Gis" id="8e2-OR-YcQ"/>
                         <outlet property="rememberSwitch" destination="RbJ-Yj-TWo" id="361-dq-dnM"/>
                         <outlet property="userScrollView" destination="WZM-oX-wiS" id="L6U-BO-8Oy"/>
-                        <segue destination="YCR-zR-YSG" kind="show" identifier="toApp" id="PpE-cZ-cCV"/>
+                        <segue destination="YCR-zR-YSG" kind="showDetail" identifier="toApp" id="jrg-Xl-MpY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335" y="37"/>
+            <point key="canvasLocation" x="196" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uzJ-wb-xn1">
+            <objects>
+                <navigationController id="4lW-Xo-tdd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XQ7-cd-ib0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e8h-gK-LA9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTr-0Q-XHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-566" y="36"/>
         </scene>
         <!--SignUpViewController-->
         <scene sceneID="ma3-Fh-KFG">
@@ -395,10 +411,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-2m-JaT" userLabel="detailsView">
-                                                                <rect key="frame" x="0.0" y="28" width="375" height="667"/>
+                                                                <rect key="frame" x="0.0" y="8" width="375" height="667"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kmK-Mh-JfO" userLabel="mailFull">
-                                                                        <rect key="frame" x="38" y="252" width="300" height="25"/>
+                                                                        <rect key="frame" x="38" y="272" width="300" height="25"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UCX-NT-6GD" userLabel="mail">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="19"/>
@@ -426,7 +442,7 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ajD-yR-E7w" userLabel="passFull">
-                                                                        <rect key="frame" x="38" y="312" width="300" height="25"/>
+                                                                        <rect key="frame" x="38" y="332" width="300" height="25"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dOk-bi-wVv" userLabel="pass">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="19"/>
@@ -454,7 +470,7 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aer-gb-gI7" userLabel="nameFull">
-                                                                        <rect key="frame" x="37" y="372" width="300" height="25"/>
+                                                                        <rect key="frame" x="37" y="392" width="300" height="25"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m2D-fu-IE3" userLabel="name">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="19"/>
@@ -482,7 +498,7 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZF2-c2-SpM" userLabel="phoneFull">
-                                                                        <rect key="frame" x="37" y="432" width="300" height="25"/>
+                                                                        <rect key="frame" x="37" y="452" width="300" height="25"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YU5-jV-IO8" userLabel="phone">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="19"/>
@@ -510,7 +526,7 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="gF4-48-R5q">
-                                                                        <rect key="frame" x="121.5" y="12" width="131" height="131"/>
+                                                                        <rect key="frame" x="121.5" y="32" width="131" height="131"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="gF4-48-R5q" secondAttribute="height" multiplier="1:1" id="dtQ-7k-W3R"/>
                                                                         </constraints>
@@ -1038,6 +1054,7 @@
         <scene sceneID="i9h-Xg-2M1">
             <objects>
                 <tabBarController id="YCR-zR-YSG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="TXS-FF-aQp"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bLJ-kb-ty7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1074,7 +1091,7 @@
         <image name="TextBox1" width="288" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="335-t4-Y92"/>
+        <segue reference="e8h-gK-LA9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.13025489244611466" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

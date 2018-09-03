@@ -59,11 +59,12 @@ class LoginViewController: UIViewController {
                                                object: nil,
                                                queue: nil,
                                                using: hideKeyboard)
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated:  true)
         NotificationCenter.default.removeObserver(self)
     }
     

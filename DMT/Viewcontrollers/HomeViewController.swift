@@ -46,9 +46,10 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         if let _ = userDetails {
             print("HomeViewController - userDetails NOT NIL ")
         }
-        
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated:  true)
+    }
     func prepareCalendar() {
         calendar = UltraWeekCalendar.init(frame: CGRect(x: 0, y: Constraints.topBarHeight, width: UIScreen.main.bounds.width, height: 60))
         let formatter = DateFormatter()

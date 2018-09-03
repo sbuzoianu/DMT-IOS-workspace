@@ -45,9 +45,9 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
                                                using: hideKeyboard)
         
     }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated:  true)
         NotificationCenter.default.removeObserver(self)
     }
     

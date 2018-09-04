@@ -11,7 +11,7 @@ import UIKit
 import UIKit
 
 struct cellData {
-    let cell: String!
+    var cell: String!
     let text: String!
 }
 
@@ -34,19 +34,23 @@ class OfferDtailsViewController: UIViewController {
         tableView.dataSource = self
         
         createImageArray()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+            
+            // 07.08.2018 - ora 09:16
         
-        // 07.08.2018 - ora 09:16
+        guard let clickedOfferDetails = clickedOfferDetailFromServer else {
+            print("Alerta - date neconcludente!")
+            return
+        }
         
-//        guard let clickedOfferDetails = clickedOfferDetailFromServer else {
-//            print("Alerta - date neconcludente!")
-//            return
-//        }
-//        print("clickedOfferDetails - \(clickedOfferDetails)")
+        cellDataArray = [cellData(cell: "1", text: clickedOfferDetailFromServer?.titluOferta),
+                         cellData(cell: "2", text: clickedOfferDetailFromServer?.descriereOferta)]
         
-        cellDataArray = [cellData(cell: OfferDetailsTableViewCell1.ReuseIdentifier, text: "da"),
-                         cellData(cell: OfferDetailsTableViewCell2.ReuseIdentifier, text: "nu")]
         
-
         // xib register
         
         let nib1 = UINib(nibName: OfferDetailsTableViewCell1.NibName, bundle: .main)
@@ -55,18 +59,27 @@ class OfferDtailsViewController: UIViewController {
         let nib2 = UINib(nibName: OfferDetailsTableViewCell2.NibName, bundle: .main)
         tableView.register(nib2, forCellReuseIdentifier: OfferDetailsTableViewCell2.ReuseIdentifier)
     }
-
+    
     func createImageArray() {
-        
-        imageArray = [UIImage(imageLiteralResourceName: "Bufnita"),
-                      UIImage(imageLiteralResourceName: "Caine"),
-                      UIImage(imageLiteralResourceName: "Vulpe")]
+        if clickedOfferDetailFromServer?.imagineOferta1 != nil{
+            
+            let image = clickedOfferDetailFromServer?.imagineOferta1?.fromBase64()
+            imageArray.append(image!)
+        }
+        if clickedOfferDetailFromServer?.imagineOferta2 != nil{
+            let image = clickedOfferDetailFromServer?.imagineOferta2?.fromBase64()
+            imageArray.append(image!)
+        }
+        if clickedOfferDetailFromServer?.imagineOferta3 != nil{
+            let image = clickedOfferDetailFromServer?.imagineOferta3?.fromBase64()
+            imageArray.append(image!)
+        }
+        // imageArray = [UIImage(imageLiteralResourceName: "Bufnita"), UIImage(imageLiteralResourceName: "Caine"), UIImage(imageLiteralResourceName: "Vulpe")]
         imageScrollView.delegate = self
         imageSlider.numberOfPages = imageArray.count
         imageSlider.currentPage = 0
         imageScrollView.contentSize.width = imageScrollView.frame.width * CGFloat(imageArray.count)
         imageScrollView.isPagingEnabled = true
-        imageScrollView.contentMode = .scaleAspectFit
         
         for i in 0..<imageArray.count{
             
@@ -91,36 +104,61 @@ extension OfferDtailsViewController: UITableViewDelegate, UITableViewDataSource 
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var cell:OffersTableViewCellProtocol? = nil
+        // var cell:OffersTableViewCellProtocol? = nil
         
         switch cellDataArray[indexPath.row].cell {
-        case OfferDetailsTableViewCell1.ReuseIdentifier:
-                cell = tableView.dequeueReusableCell(withIdentifier: OfferDetailsTableViewCell1.ReuseIdentifier) as? OffersTableViewCellProtocol
-                cell?.config(withData: cellDataArray[indexPath.row])
+        case "1":
+            let cell = tableView.dequeueReusableCell(withIdentifier: OfferDetailsTableViewCell1.ReuseIdentifier) as! OfferDetailsTableViewCell1
+            cell.headerLabel.text = cellDataArray[indexPath.row].text
+            cell.dateLabel.text = clickedOfferDetailFromServer?.numeAngajator
+            cell.priceLabel.text = clickedOfferDetailFromServer?.pretOferta
+            return cell
             
-        case OfferDetailsTableViewCell2.ReuseIdentifier:
-                cell = tableView.dequeueReusableCell(withIdentifier: OfferDetailsTableViewCell2.ReuseIdentifier) as? OffersTableViewCellProtocol
-                cell?.config(withData: cellDataArray[indexPath.row])
-
+        case "2":
+            let cell = tableView.dequeueReusableCell(withIdentifier: OfferDetailsTableViewCell2.ReuseIdentifier) as! OfferDetailsTableViewCell2
+            cell.descriptionLabel.text = cellDataArray[indexPath.row].text
+            return cell
+            
         default:
-            cell = tableView.dequeueReusableCell(withIdentifier: OfferDetailsTableViewCell1.ReuseIdentifier) as? OffersTableViewCellProtocol
-                cell?.config(withData: cellDataArray[indexPath.row])
+            let cell = tableView.dequeueReusableCell(withIdentifier: OfferDetailsTableViewCell1.ReuseIdentifier) as! OfferDetailsTableViewCell1
+            cell.headerLabel.text = cellDataArray[indexPath.row].text
+            cell.dateLabel.text = clickedOfferDetailFromServer?.numeAngajator
+            cell.priceLabel.text = clickedOfferDetailFromServer?.pretOferta
+            return cell
         }
         
-        return cell as! UITableViewCell
-
+        // if cellDataArray[indexPath.row].cell == 1 {
+        //// let cell = Bundle.main.loadNibNamed("OfferDetailsTableViewCell1", owner: self, options: nil)?.first as! OfferDetailsTableViewCell1
+        // let cell = tableView.dequeueReusableCell(withIdentifier: OfferDetailsTableViewCell1.ReuseIdentifier) as! OfferDetailsTableViewCell1
+        //
+        // cell.headerLabel.text = cellDataArray[indexPath.row].text
+        //
+        // return cell
+        // }
+        // else if cellDataArray[indexPath.row].cell == 2 {
+        // let cell = Bundle.main.loadNibNamed("OfferDetailsTableViewCell2", owner: self, options: nil)?.first as! OfferDetailsTableViewCell2
+        // cell.descriptionLabel.text = cellDataArray[indexPath.row].text
+        //
+        // return cell
+        // }
+        // else {
+        // let cell = Bundle.main.loadNibNamed("OfferDetailsTableViewCell1", owner: self, options: nil)?.first as! OfferDetailsTableViewCell1
+        // cell.headerLabel.text = cellDataArray[indexPath.row].text
+        //
+        // return cell
+        // }
+        // return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if cellDataArray[indexPath.row].cell == OfferDetailsTableViewCell1.ReuseIdentifier {
-            return 328
+        if cellDataArray[indexPath.row].cell == "1" {
+            return 128
         }
-        else if cellDataArray[indexPath.row].cell == OfferDetailsTableViewCell2.ReuseIdentifier {
-            return 380
+        else if cellDataArray[indexPath.row].cell == "2" {
+            return 180
         }
         else {
-            return 328
+            return 128
         }
     }
 }
@@ -136,9 +174,8 @@ extension OfferDtailsViewController: UIScrollViewDelegate {
 
 extension String{
     func fromBase64() -> UIImage{
-        let dataDecoded  = NSData(base64Encoded: self, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)!
+        let dataDecoded = NSData(base64Encoded: self, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)!
         let image = UIImage(data: dataDecoded as Data)
         return image!
     }
 }
-

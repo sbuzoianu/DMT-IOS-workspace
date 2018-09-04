@@ -27,7 +27,8 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         super.viewDidLoad()
         
         prepareCalendar()
-        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
@@ -38,7 +39,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         // oferte aduse
         
         getAllOffersFromServer()
-     
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,7 +120,6 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
                             self?.offerNumber = resultFromJSON.count
                             self?.offerDetails = resultFromJSON
                             print(self?.offerDetails[1].numeLocatie as Any)
-                            
                             self?.collectionView.reloadData()
                             
                         }

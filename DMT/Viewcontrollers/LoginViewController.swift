@@ -191,9 +191,9 @@ class LoginViewController: UIViewController {
                 
                 let barViewControllers = segue.destination as! UITabBarController
                 barViewControllers.viewControllers?.forEach{
-                    if let vc = $0 as? HomeViewController {
-                        vc.userDetails = userDetailsFromServer
-                        
+                    if let navVC = $0 as? UINavigationController {
+                        let tableVC = navVC.viewControllers.first as! HomeViewController
+                        tableVC.userDetails = userDetailsFromServer
                         
                     }
                     

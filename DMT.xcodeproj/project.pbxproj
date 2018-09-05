@@ -17,6 +17,8 @@
 		4248014120ECD24F0051AF46 /* ClickedOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248014020ECD24E0051AF46 /* ClickedOffer.swift */; };
 		424953D020A3188300396E8D /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424953CF20A3188300396E8D /* Toast.swift */; };
 		426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F0F7420B16F290088E70A /* HomeViewController.swift */; };
+		42E0FC0F214010F1005B8C7D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0FC0E214010F1005B8C7D /* TabBarViewController.swift */; };
+		42E0FC1121404438005B8C7D /* HomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0FC1021404438005B8C7D /* HomeTabBar.swift */; };
 		42F74F9A20BC2D5E00DE8F07 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F74F9920BC2D5E00DE8F07 /* ForgotPasswordViewController.swift */; };
 		42FC3003209491DB00037E08 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC3002209491DB00037E08 /* UserRegister.swift */; };
 		42FC30052094940700037E08 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC30042094940700037E08 /* RegisterViewController.swift */; };
@@ -73,6 +75,8 @@
 		424953CF20A3188300396E8D /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		426F0F7020B16E3C0088E70A /* DMT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DMT-Bridging-Header.h"; path = "UIUltraCalendar/DMT-Bridging-Header.h"; sourceTree = "<group>"; };
 		426F0F7420B16F290088E70A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		42E0FC0E214010F1005B8C7D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		42E0FC1021404438005B8C7D /* HomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBar.swift; sourceTree = "<group>"; };
 		42F74F9920BC2D5E00DE8F07 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		42FC3002209491DB00037E08 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		42FC30042094940700037E08 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 		5A49E3792105EE07002DD350 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				42E0FC1021404438005B8C7D /* HomeTabBar.swift */,
 				5A49E3752105EDFA002DD350 /* OfferDetailsTableViewCell1.swift */,
 				5A49E37B2105F082002DD350 /* OfferDetailsTableViewCell2.swift */,
 				5A55FE5320F25C8F0036C724 /* OffersCollectionViewCell.swift */,
@@ -238,6 +243,7 @@
 		5AC573C720D291CF00BE5878 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				42E0FC0E214010F1005B8C7D /* TabBarViewController.swift */,
 				5A25E6AB21186AD000C5F24B /* OffersViewController.swift */,
 				42F74F9920BC2D5E00DE8F07 /* ForgotPasswordViewController.swift */,
 				5A2ADD5F204BF2BF00602D83 /* LoginViewController.swift */,
@@ -521,6 +527,7 @@
 				5AA096C92104FD7000C1F6D4 /* OfferDtailsViewController.swift in Sources */,
 				5A5CEF79208F93290098B4E3 /* ServerRequestManager.swift in Sources */,
 				4248014120ECD24F0051AF46 /* ClickedOffer.swift in Sources */,
+				42E0FC1121404438005B8C7D /* HomeTabBar.swift in Sources */,
 				3C4DC77C20D3CF7B0049BD21 /* Services.swift in Sources */,
 				3C8A657C20B692E20099B204 /* UltraWeekCalendar.m in Sources */,
 				42FC3003209491DB00037E08 /* UserRegister.swift in Sources */,
@@ -528,6 +535,7 @@
 				5A2ADD5E204BF2BF00602D83 /* AppDelegate.swift in Sources */,
 				42F74F9A20BC2D5E00DE8F07 /* ForgotPasswordViewController.swift in Sources */,
 				5A55FE5520F25C8F0036C724 /* OffersCollectionViewCell.swift in Sources */,
+				42E0FC0F214010F1005B8C7D /* TabBarViewController.swift in Sources */,
 				5A2ADD8E204BFBCE00602D83 /* Constants.swift in Sources */,
 				5A5CEF7B208F93330098B4E3 /* AlertManager.swift in Sources */,
 				423C035C20D8E01500351AC4 /* ProfileViewController.swift in Sources */,

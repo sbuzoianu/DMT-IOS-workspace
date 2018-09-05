@@ -174,9 +174,6 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         getAllOffersFromServer()     
     }
     
-    
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let segueIdentifier = segue.identifier {

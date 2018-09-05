@@ -41,7 +41,6 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navigationController?.setNavigationBarHidden(true, animated: false)
         let showKeyboard: (Notification) -> Void = { notification in
             self.keyboardWillShow(notification)
         }
@@ -64,7 +63,6 @@ class LoginViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        self.navigationController?.setNavigationBarHidden(true, animated:  true)
         NotificationCenter.default.removeObserver(self)
     }
     

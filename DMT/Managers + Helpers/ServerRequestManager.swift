@@ -80,12 +80,17 @@ class ServerRequestManager: NSObject {
                 }
                 catch let error {
                     print("error catch - \(error)")
-                    postCompleted(FetchResult.error(error as! String))
+                    postCompleted(FetchResult.error(error.localizedDescription))
                     
                 }
                 
             } else {
-                postCompleted(FetchResult.error(error as! String))
+                if let error = error {
+                    postCompleted(FetchResult.error(error.localizedDescription))
+                } else { // eroare necunoscuta
+                    postCompleted(FetchResult.error("Unknow error"))
+                    
+                }
                 
             }
             
@@ -93,7 +98,6 @@ class ServerRequestManager: NSObject {
         })
         task.resume()
     }
-    
     
     private func createStringFromDictionary(dict: Parameters) -> String {
         var params = String()

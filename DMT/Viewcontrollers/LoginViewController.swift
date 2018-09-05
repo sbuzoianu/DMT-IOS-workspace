@@ -169,19 +169,26 @@ class LoginViewController: UIViewController {
                             }
                         }
                     default:
+                        
                         break
                     }
+                } else {
+                   
+                    DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+                        DispatchQueue.main.async {
+                            self?.loginButton.isEnabled = true
+                            AlertManager.showGenericDialog(json.response!, viewController: self!)
+                        }
+                        
+                    }
                 }
-                
             case .error(let errorString):
                 print("errorString = \(errorString)")
                 
                 break
                 
             }
-            
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

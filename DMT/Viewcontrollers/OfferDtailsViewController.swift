@@ -35,10 +35,7 @@ class OfferDtailsViewController: UIViewController {
         
         createImageArray()
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
             
             // 07.08.2018 - ora 09:16
         

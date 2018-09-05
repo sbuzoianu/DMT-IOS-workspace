@@ -21,8 +21,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
         segmentedReviews.layer.shadowOffset = CGSize(width: 0, height: 4)
         segmentedReviews.layer.shadowRadius = 4
         segmentedReviews.layer.shadowOpacity = 0.25
-        
-        print(userDetails?.avatar as Any)
         if userDetails?.avatar != "" {		
             let avatar = userDetails?.avatar?.fromBase64()
             profileImageView.image = avatar
@@ -59,9 +57,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate {
         profileImageView.image = profileImageView.image?.circle
         let imageStr = ServerRequestHelper.instance.convertImageTobase64(format: .png, image: image)
         dismiss(animated: true, completion: nil)
-        var params = Dictionary<String, String>();
+        
+        print("user details - ProfileViewController - \(String(describing: userDetails!))")
+        var params = Dictionary<String, String>()
         params["request"] = "1"
         params["avatar"] = imageStr
+        if let userID = userDetails?.idUser {
+            params["id"] = userID
+        }
+        
+       
+        
         Services.avatarChange(params: params) { [weak self] result in
             switch result {
             case .success(let json):
@@ -100,4 +106,3 @@ extension ProfileViewController: UIImagePickerControllerDelegate {
         }
     }
 }
-

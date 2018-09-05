@@ -905,7 +905,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DkG-h3-lfn">
-                                <rect key="frame" x="0.0" y="113.5" width="375" height="553.5"/>
+                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yJ3-Wm-8wp">
                                     <size key="itemSize" width="413" height="78"/>
@@ -927,7 +927,7 @@
                             <constraint firstItem="aKP-cd-pRq" firstAttribute="width" secondItem="Xi0-1B-H5b" secondAttribute="width" id="Aez-t2-E7I"/>
                             <constraint firstItem="aKP-cd-pRq" firstAttribute="height" secondItem="Xi0-1B-H5b" secondAttribute="height" constant="-20" id="Kbv-OT-Ndf"/>
                             <constraint firstItem="DkG-h3-lfn" firstAttribute="leading" secondItem="eUc-Ns-Ntu" secondAttribute="leading" id="ROr-LJ-LJr"/>
-                            <constraint firstItem="DkG-h3-lfn" firstAttribute="height" secondItem="Xi0-1B-H5b" secondAttribute="height" multiplier="0.83" id="ZLf-xG-ayf"/>
+                            <constraint firstItem="DkG-h3-lfn" firstAttribute="height" secondItem="Xi0-1B-H5b" secondAttribute="height" constant="-134" id="ZLf-xG-ayf"/>
                             <constraint firstItem="eUc-Ns-Ntu" firstAttribute="trailing" secondItem="DkG-h3-lfn" secondAttribute="trailing" id="ZSO-np-QTa"/>
                             <constraint firstItem="aKP-cd-pRq" firstAttribute="centerX" secondItem="Xi0-1B-H5b" secondAttribute="centerX" id="cUI-1b-AsS"/>
                             <constraint firstItem="aKP-cd-pRq" firstAttribute="centerY" secondItem="Xi0-1B-H5b" secondAttribute="centerY" constant="10" id="hIq-ga-p7r"/>

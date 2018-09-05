@@ -14,7 +14,7 @@ class AlertManager: NSObject {
     
     static func showGenericDialog(_ message: String, viewController: UIViewController, closeOnExit: Bool = false, buttonToBeEnabled: UIButton? = nil) {
         
-        let alert = UIAlertController(title: "ServerRequestManager", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Wrenchy", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
             if(buttonToBeEnabled != nil) {
                 buttonToBeEnabled?.isEnabled = true;

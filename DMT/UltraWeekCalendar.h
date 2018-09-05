@@ -2,7 +2,7 @@
 //  UltraWeekCalendar.h
 //  DMT
 //
-//  Created by Synergy on 24/05/2018. 
+//  Created by Synergy on 24/05/2018.
 //  Copyright © 2018 Boggy. All rights reserved.
 //
 
@@ -22,6 +22,7 @@
 }
 
 - (void)selectedDate:(int)dayOffset;
+- (void)selectDay:(int)dayOffsetValue;
 
 @property (strong, nonatomic) id<UltraWeekCalendarDelegate> delegate;
 

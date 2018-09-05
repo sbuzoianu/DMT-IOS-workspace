@@ -59,11 +59,12 @@ class LoginViewController: UIViewController {
                                                object: nil,
                                                queue: nil,
                                                using: hideKeyboard)
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated:  true)
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -168,19 +169,26 @@ class LoginViewController: UIViewController {
                             }
                         }
                     default:
+                        
                         break
                     }
+                } else {
+                   
+                    DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+                        DispatchQueue.main.async {
+                            self?.loginButton.isEnabled = true
+                            AlertManager.showGenericDialog(json.response!, viewController: self!)
+                        }
+                        
+                    }
                 }
-                
             case .error(let errorString):
                 print("errorString = \(errorString)")
                 
                 break
                 
             }
-            
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -190,9 +198,9 @@ class LoginViewController: UIViewController {
                 
                 let barViewControllers = segue.destination as! UITabBarController
                 barViewControllers.viewControllers?.forEach{
-                    if let vc = $0 as? HomeViewController {
-                        vc.userDetails = userDetailsFromServer
-                        
+                    if let navVC = $0 as? UINavigationController {
+                        let tableVC = navVC.viewControllers.first as! HomeViewController
+                        tableVC.userDetails = userDetailsFromServer
                         
                     }
                     

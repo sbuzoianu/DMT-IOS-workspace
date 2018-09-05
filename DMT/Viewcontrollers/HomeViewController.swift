@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
     @IBOutlet weak var noOffersLabel: UILabel!
     @IBOutlet var noOffersView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    private let refreshControl = UIRefreshControl()
     var userDetails: UserDetails? // aceasta instanta este creata atunci cand se va face tranzitia din LoginVC in HomeVC
     var clickedOfferDetailFromServer: ClickedOfferDetail?
     var offerDetails: [OffersDetail] = []
@@ -26,11 +27,13 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         print("HomeViewController - viewDidLoad")
         super.viewDidLoad()
         
-        prepareCalendar()
-        
+      
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        
+        refreshControl.addTarget(self, action: #selector(refreshJobData(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.attributedTitle = NSAttributedString(string:"Fetching Offers")
         let secondTab = self.tabBarController?.viewControllers![1] as! ProfileViewController
         secondTab.userDetails = userDetails
         prepareCollectionView()
@@ -38,7 +41,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         // oferte aduse
         
         getAllOffersFromServer()
-     
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,9 +49,19 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         if let _ = userDetails {
             print("HomeViewController - userDetails NOT NIL ")
         }
+         prepareCalendar()    }
+    override func viewDidAppear(_ animated: Bool) {
+        print("HomeViewController - viewDidAppear")
+        print("top distance = \(self.calculateTopDistance())")
+       
         
     }
-    
+    @objc private func refreshJobData(_ sender: Any){
+        getAllOffersFromServer()
+        self.collectionView.reloadData()
+        self.refreshControl.endRefreshing()
+        
+    }
     func prepareCalendar() {
         calendar = UltraWeekCalendar.init(frame: CGRect(x: 0, y: Constraints.topBarHeight, width: UIScreen.main.bounds.width, height: 60))
         let formatter = DateFormatter()
@@ -59,11 +72,18 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         
         calendar?.startDate = Date()
         calendar?.endDate = someDateTime
-        calendar?.selectedDate = Date()
+        //        calendar?.selectedDate = Date()
+        //        self.view.addSubview(calendar!)
+        
+        if let currentDate = calendar?.startDate {
+            print("selectedDate  = \(currentDate)")
+            calendar?.selectedDate = currentDate
+            
+        }
         self.view.addSubview(calendar!)
         
         // customizare calendar:
-
+        
         calendar?.backgroundColor = UIColor(rgb:0xCCCCCC)
         calendar?.monthTextColor = UIColor(rgb:0xFFFFFF)
         calendar?.monthBGColor = UIColor(rgb:0x7baecb)
@@ -83,8 +103,13 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         print("ViewController - \(OffersCollectionViewCell.ReuseIdentifier)")
         let nib = UINib(nibName: OffersCollectionViewCell.NibName, bundle: .main)
         collectionView.register(nib, forCellWithReuseIdentifier: OffersCollectionViewCell.ReuseIdentifier)
+        if #available(iOS 10.0, *){
+        collectionView.refreshControl = refreshControl
+        
+        } else {
+            collectionView.addSubview(refreshControl)
+        }
     }
-    
     func getAllOffersFromServer() {
         var params = Parameters()
         params["request"] = "0"
@@ -115,12 +140,12 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
                 case ServerRequestConstants.JSON.RESPONSE_SUCCESS:
                     DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
                         DispatchQueue.main.async {
+                            
                             self?.offerNumber = resultFromJSON.count
                             self?.offerDetails = resultFromJSON
                             print(self?.offerDetails[1].numeLocatie as Any)
-                            
                             self?.collectionView.reloadData()
-                            
+                            self?.calendar?.selectDay(4000)
                         }
                     }
                 default:
@@ -146,9 +171,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
             self.noOffersLabel.text = "No Offers"
         }
         print("dateClicked")
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+        getAllOffersFromServer()     
     }
     
     
@@ -166,7 +189,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
             }
             
         }
-        segue.destination.navigationController?.setNavigationBarHidden(true, animated: true)
+       // segue.destination.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
     

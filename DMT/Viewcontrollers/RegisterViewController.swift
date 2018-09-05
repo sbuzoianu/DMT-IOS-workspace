@@ -65,11 +65,12 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
                                                object: nil,
                                                queue: nil,
                                                using: hideKeyboard)
-        
-    }
+       
+        self.navigationController?.setNavigationBarHidden(false, animated:  true)    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated:  true)
         NotificationCenter.default.removeObserver(self)
     }
     

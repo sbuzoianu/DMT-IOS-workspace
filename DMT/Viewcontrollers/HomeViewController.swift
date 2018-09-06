@@ -36,8 +36,10 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         refreshControl.attributedTitle = NSAttributedString(string:"Fetching Offers")
         let secondTab = self.tabBarController?.viewControllers![1] as! ProfileViewController
         secondTab.userDetails = userDetails
+        let thirdTab = self.tabBarController?.viewControllers![2] as!
+        OffersViewController
+        thirdTab.userDetails = userDetails
         prepareCollectionView()
-
         // oferte aduse
         
         getAllOffersFromServer()

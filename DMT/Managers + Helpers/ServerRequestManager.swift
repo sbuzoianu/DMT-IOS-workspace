@@ -14,6 +14,7 @@ public typealias Parameters = [String:String]
 enum ServerRequestConstants {
     
     enum  URLS{
+        static let GET_HYBRID_OFFERS = "http://students.doubleuchat.com/gethybridoffers.php"
         static let LOGIN_TEXT_RESPONSE = "http://students.doubleuchat.com/list.php"
         static let LOGIN_BINARY_RESPONSE = "http://students.doubleuchat.com/list_bin.php"
         static let LOGIN_URL = "http://students.doubleuchat.com/login.php"
@@ -74,23 +75,19 @@ class ServerRequestManager: NSObject {
                     
                     let decoder = JSONDecoder()
                     let objectJSON = try decoder.decode(T.self, from: data!)
+                    print(objectJSON)
                     postCompleted(FetchResult.success(objectJSON))
                     
                     
                 }
                 catch let error {
                     print("error catch - \(error)")
-                    postCompleted(FetchResult.error(error.localizedDescription))
+                    postCompleted(FetchResult.error(error as! String))
                     
                 }
                 
             } else {
-                if let error = error {
-                    postCompleted(FetchResult.error(error.localizedDescription))
-                } else { // eroare necunoscuta
-                    postCompleted(FetchResult.error("Unknow error"))
-                    
-                }
+                postCompleted(FetchResult.error(error as! String))
                 
             }
             
@@ -98,6 +95,7 @@ class ServerRequestManager: NSObject {
         })
         task.resume()
     }
+    
     
     private func createStringFromDictionary(dict: Parameters) -> String {
         var params = String()

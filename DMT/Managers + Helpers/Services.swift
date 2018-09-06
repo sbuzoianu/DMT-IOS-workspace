@@ -30,18 +30,18 @@ class Services {
     }
     
     static func forgotPasswordService(params: Parameters, completionHandler: @escaping (FetchResult<UserRegister>) -> Void){
-    
+        
         ServerRequestManager.instance.postRequest(params: params as Parameters,
                                                   url: ServerRequestConstants.URLS.FORGOT_PASSWORD_URL,
                                                   postCompleted: completionHandler)
-    
+        
     }
     
     static func getAllOffers(params: Parameters, completionHandler: @escaping (FetchResult<OffersResult>) -> Void){
         ServerRequestManager.instance.postRequest(params: params as Parameters,
                                                   url: ServerRequestConstants.URLS.ALL_OFFERS_URL,
                                                   postCompleted: completionHandler)
-
+        
     }
     
     static func avatarChange(params: Parameters, completionHandler: @escaping (FetchResult<UserRegister>) -> Void){
@@ -59,5 +59,13 @@ class Services {
                                                   postCompleted: completionHandler)
         
     }
-
+    
+    static func getHybridOffers(params: Parameters, completionHandler: @escaping (FetchResult<HybridOffers>) -> Void){
+        
+        ServerRequestManager.instance.postRequest(params: params as Parameters,
+                                                  url: ServerRequestConstants.URLS.GET_HYBRID_OFFERS,
+                                                  postCompleted: completionHandler)
+        
+    }
+    
 }

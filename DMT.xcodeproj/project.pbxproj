@@ -31,6 +31,7 @@
 		5A2ADD73204BF2BF00602D83 /* DMTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2ADD72204BF2BF00602D83 /* DMTTests.swift */; };
 		5A2ADD7E204BF2BF00602D83 /* DMTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2ADD7D204BF2BF00602D83 /* DMTUITests.swift */; };
 		5A2ADD8E204BFBCE00602D83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2ADD8D204BFBCE00602D83 /* Constants.swift */; };
+		5A3B6DF62141274900D4AFC0 /* HybridOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B6DF52141274900D4AFC0 /* HybridOffers.swift */; };
 		5A49E3772105EDFA002DD350 /* OfferDetailsTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49E3752105EDFA002DD350 /* OfferDetailsTableViewCell1.swift */; };
 		5A49E3782105EDFA002DD350 /* OfferDetailsTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A49E3762105EDFA002DD350 /* OfferDetailsTableViewCell1.xib */; };
 		5A49E37D2105F082002DD350 /* OfferDetailsTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49E37B2105F082002DD350 /* OfferDetailsTableViewCell2.swift */; };
@@ -41,6 +42,10 @@
 		5A5CEF79208F93290098B4E3 /* ServerRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CEF78208F93290098B4E3 /* ServerRequestManager.swift */; };
 		5A5CEF7B208F93330098B4E3 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CEF7A208F93330098B4E3 /* AlertManager.swift */; };
 		5AA096C92104FD7000C1F6D4 /* OfferDtailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA096C82104FD7000C1F6D4 /* OfferDtailsViewController.swift */; };
+		5AC0F9A8214056D6001D64E5 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC0F9A7214056D6001D64E5 /* LaunchViewController.swift */; };
+		5AC0F9AA21406620001D64E5 /* JobListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC0F9A921406620001D64E5 /* JobListViewController.swift */; };
+		5AC0F9AD21406A51001D64E5 /* JobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC0F9AB21406A51001D64E5 /* JobCollectionViewCell.swift */; };
+		5AC0F9AE21406A51001D64E5 /* JobCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC0F9AC21406A51001D64E5 /* JobCollectionViewCell.xib */; };
 		94A1209B20FF992700B3C895 /* ClickedOfferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1209A20FF992700B3C895 /* ClickedOfferDetailViewController.swift */; };
 		F5157810875355E9661E985E /* Pods_DMT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978775FB338A96C37F539578 /* Pods_DMT.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +100,7 @@
 		5A2ADD7D204BF2BF00602D83 /* DMTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTUITests.swift; sourceTree = "<group>"; };
 		5A2ADD7F204BF2BF00602D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2ADD8D204BFBCE00602D83 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5A3B6DF52141274900D4AFC0 /* HybridOffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridOffers.swift; sourceTree = "<group>"; };
 		5A49E3752105EDFA002DD350 /* OfferDetailsTableViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsTableViewCell1.swift; sourceTree = "<group>"; };
 		5A49E3762105EDFA002DD350 /* OfferDetailsTableViewCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferDetailsTableViewCell1.xib; sourceTree = "<group>"; };
 		5A49E37B2105F082002DD350 /* OfferDetailsTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsTableViewCell2.swift; sourceTree = "<group>"; };
@@ -105,6 +111,10 @@
 		5A5CEF78208F93290098B4E3 /* ServerRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequestManager.swift; sourceTree = "<group>"; };
 		5A5CEF7A208F93330098B4E3 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5AA096C82104FD7000C1F6D4 /* OfferDtailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDtailsViewController.swift; sourceTree = "<group>"; };
+		5AC0F9A7214056D6001D64E5 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		5AC0F9A921406620001D64E5 /* JobListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListViewController.swift; sourceTree = "<group>"; };
+		5AC0F9AB21406A51001D64E5 /* JobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCollectionViewCell.swift; sourceTree = "<group>"; };
+		5AC0F9AC21406A51001D64E5 /* JobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobCollectionViewCell.xib; sourceTree = "<group>"; };
 		633947960B9D04D09ACEDFCE /* Pods-DMTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMTTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMTTests/Pods-DMTTests.release.xcconfig"; sourceTree = "<group>"; };
 		9334F70595FBAD0B740024FC /* Pods-DMTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMTUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMTUITests/Pods-DMTUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94A1209A20FF992700B3C895 /* ClickedOfferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedOfferDetailViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 				42FC3002209491DB00037E08 /* UserRegister.swift */,
 				4248014020ECD24E0051AF46 /* ClickedOffer.swift */,
 				3C9E9CD820DBA5100084ECA9 /* OffersResult.swift */,
+				5A3B6DF52141274900D4AFC0 /* HybridOffers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +237,7 @@
 				5A49E3752105EDFA002DD350 /* OfferDetailsTableViewCell1.swift */,
 				5A49E37B2105F082002DD350 /* OfferDetailsTableViewCell2.swift */,
 				5A55FE5320F25C8F0036C724 /* OffersCollectionViewCell.swift */,
+				5AC0F9AB21406A51001D64E5 /* JobCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -236,6 +248,7 @@
 				5A49E3762105EDFA002DD350 /* OfferDetailsTableViewCell1.xib */,
 				5A49E37C2105F082002DD350 /* OfferDetailsTableViewCell2.xib */,
 				5A55FE5420F25C8F0036C724 /* OffersCollectionViewCell.xib */,
+				5AC0F9AC21406A51001D64E5 /* JobCollectionViewCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -252,6 +265,8 @@
 				42FC30042094940700037E08 /* RegisterViewController.swift */,
 				423C035B20D8E01500351AC4 /* ProfileViewController.swift */,
 				5AA096C82104FD7000C1F6D4 /* OfferDtailsViewController.swift */,
+				5AC0F9A7214056D6001D64E5 /* LaunchViewController.swift */,
+				5AC0F9A921406620001D64E5 /* JobListViewController.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -413,6 +428,7 @@
 				5A2ADD68204BF2BF00602D83 /* LaunchScreen.storyboard in Resources */,
 				5A55FE5620F25C8F0036C724 /* OffersCollectionViewCell.xib in Resources */,
 				5A2ADD65204BF2BF00602D83 /* Assets.xcassets in Resources */,
+				5AC0F9AE21406A51001D64E5 /* JobCollectionViewCell.xib in Resources */,
 				5A49E3782105EDFA002DD350 /* OfferDetailsTableViewCell1.xib in Resources */,
 				5A2ADD63204BF2BF00602D83 /* Main.storyboard in Resources */,
 				3C920CA32121944D00B3756F /* GoogleService-Info.plist in Resources */,
@@ -531,10 +547,13 @@
 				3C4DC77C20D3CF7B0049BD21 /* Services.swift in Sources */,
 				3C8A657C20B692E20099B204 /* UltraWeekCalendar.m in Sources */,
 				42FC3003209491DB00037E08 /* UserRegister.swift in Sources */,
+				5A3B6DF62141274900D4AFC0 /* HybridOffers.swift in Sources */,
 				5A2ADD60204BF2BF00602D83 /* LoginViewController.swift in Sources */,
 				5A2ADD5E204BF2BF00602D83 /* AppDelegate.swift in Sources */,
 				42F74F9A20BC2D5E00DE8F07 /* ForgotPasswordViewController.swift in Sources */,
+				5AC0F9AD21406A51001D64E5 /* JobCollectionViewCell.swift in Sources */,
 				5A55FE5520F25C8F0036C724 /* OffersCollectionViewCell.swift in Sources */,
+				5AC0F9A8214056D6001D64E5 /* LaunchViewController.swift in Sources */,
 				42E0FC0F214010F1005B8C7D /* TabBarViewController.swift in Sources */,
 				5A2ADD8E204BFBCE00602D83 /* Constants.swift in Sources */,
 				5A5CEF7B208F93330098B4E3 /* AlertManager.swift in Sources */,
@@ -542,6 +561,7 @@
 				5A5CEF77208F92CD0098B4E3 /* ServerRequestHelper.swift in Sources */,
 				94A1209B20FF992700B3C895 /* ClickedOfferDetailViewController.swift in Sources */,
 				426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */,
+				5AC0F9AA21406620001D64E5 /* JobListViewController.swift in Sources */,
 				5A25E6AC21186AD000C5F24B /* OffersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,13 +735,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DMT/DMT.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LRN4ZGW52H;
+				DEVELOPMENT_TEAM = 4857534772;
 				INFOPLIST_FILE = DMT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzoianu.wrenchly;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzoianu.wrenchy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DMT/UIUltraCalendar/DMT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -736,13 +758,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DMT/DMT.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LRN4ZGW52H;
+				DEVELOPMENT_TEAM = 4857534772;
 				INFOPLIST_FILE = DMT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzoianu.wrenchly;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzoianu.wrenchy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DMT/UIUltraCalendar/DMT-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

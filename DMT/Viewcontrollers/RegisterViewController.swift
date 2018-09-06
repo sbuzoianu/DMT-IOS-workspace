@@ -18,8 +18,16 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var profileImageView: UIImageView!
     var clickedOfferDetailFromServer: ClickedOfferDetail?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setTransparent(true)
+        
+        if #available(iOS 11.0, *) {
+            self.userScrollView.contentInsetAdjustmentBehavior = .never;
+        }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         let tapImage = UITapGestureRecognizer(target: self, action: #selector(imageTapped))

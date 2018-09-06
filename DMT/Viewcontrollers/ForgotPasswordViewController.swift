@@ -25,10 +25,14 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setTransparent(true)
+        
+        if #available(iOS 11.0, *) {
+            self.userScrollView.contentInsetAdjustmentBehavior = .never;
+        }
+        
         let showKeyboard: (Notification) -> Void = { notification in
             self.KeyboardWillShow(notification)
         }
@@ -161,3 +165,5 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         self.present(alertController, animated: true)
     }
 }
+
+

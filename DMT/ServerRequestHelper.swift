@@ -89,3 +89,16 @@ extension String {
         return Set(self).isSubset(of: nums)
     }
 }
+
+extension UINavigationBar {
+    func setTransparent(_ flag: Bool) {
+        if flag == true {
+            setBackgroundImage(UIImage(), for: .default)
+            shadowImage = UIImage()
+            backgroundColor = .clear
+            isTranslucent = true
+        } else {
+            setBackgroundImage(nil, for: .default)
+        }
+    }
+}

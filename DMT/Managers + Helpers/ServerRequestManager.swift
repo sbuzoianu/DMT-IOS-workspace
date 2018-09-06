@@ -22,6 +22,8 @@ enum ServerRequestConstants {
         static let ALL_OFFERS_URL = "http://students.doubleuchat.com/listoffers.php"
         static let AVATAR_CHANGE_URL = "http://students.doubleuchat.com/avatarchange.php"
         static let CLICKED_OFFER_URL = "http://students.doubleuchat.com/listofferdetails.php"
+        static let CHANGE_SPECIALIZATION_URL = "http://students.doubleuchat.com/specializari.php"
+        
     }
     
     

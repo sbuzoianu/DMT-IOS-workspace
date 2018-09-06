@@ -59,5 +59,13 @@ class Services {
                                                   postCompleted: completionHandler)
         
     }
+    
+    static func chooseSpecializations(params: Parameters, completionHandler: @escaping (FetchResult<UserSpecialization>) -> Void){
+        
+        ServerRequestManager.instance.postRequest(params: params,
+                                                  url: ServerRequestConstants.URLS.CHANGE_SPECIALIZATION_URL ,
+                                                  postCompleted: completionHandler )
+    }
+    
 
 }

@@ -19,6 +19,7 @@
 		426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F0F7420B16F290088E70A /* HomeViewController.swift */; };
 		42E0FC0F214010F1005B8C7D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0FC0E214010F1005B8C7D /* TabBarViewController.swift */; };
 		42E0FC1121404438005B8C7D /* HomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0FC1021404438005B8C7D /* HomeTabBar.swift */; };
+		42E0FC132141299A005B8C7D /* UserSpecialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0FC122141299A005B8C7D /* UserSpecialization.swift */; };
 		42F74F9A20BC2D5E00DE8F07 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F74F9920BC2D5E00DE8F07 /* ForgotPasswordViewController.swift */; };
 		42FC3003209491DB00037E08 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC3002209491DB00037E08 /* UserRegister.swift */; };
 		42FC30052094940700037E08 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC30042094940700037E08 /* RegisterViewController.swift */; };
@@ -77,6 +78,7 @@
 		426F0F7420B16F290088E70A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42E0FC0E214010F1005B8C7D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		42E0FC1021404438005B8C7D /* HomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBar.swift; sourceTree = "<group>"; };
+		42E0FC122141299A005B8C7D /* UserSpecialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSpecialization.swift; sourceTree = "<group>"; };
 		42F74F9920BC2D5E00DE8F07 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		42FC3002209491DB00037E08 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		42FC30042094940700037E08 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		3C360D0220D2BB95002A90A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42E0FC122141299A005B8C7D /* UserSpecialization.swift */,
 				42FC3002209491DB00037E08 /* UserRegister.swift */,
 				4248014020ECD24E0051AF46 /* ClickedOffer.swift */,
 				3C9E9CD820DBA5100084ECA9 /* OffersResult.swift */,
@@ -543,6 +546,7 @@
 				94A1209B20FF992700B3C895 /* ClickedOfferDetailViewController.swift in Sources */,
 				426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */,
 				5A25E6AC21186AD000C5F24B /* OffersViewController.swift in Sources */,
+				42E0FC132141299A005B8C7D /* UserSpecialization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

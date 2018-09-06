@@ -22,6 +22,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.integer(forKey: UserDefaultsKeys.isLoggedIn) == 1{
+            //user is already logged in
+            logIn()
+        }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         view.addGestureRecognizer(tapGesture)
         emailField.delegate = self
@@ -101,6 +105,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
+        UserDefaults.standard.set(0, forKey: UserDefaultsKeys.isLoggedIn)
         self.loginButton.isEnabled = false
         if (emailField.text?.isEmpty)! || passwordField.text?.isEmpty == true{
             self.view.makeToast(ServerRequestConstants.resultErrors.emptyText, duration: 3.0, position:.bottom, title: "Error") { didTap in
@@ -163,6 +168,7 @@ class LoginViewController: UIViewController {
                                 self?.loginButton.isEnabled = true
                                 // salvezi resultFromJSON astfel incat el sa fie vizibil pe tot parcursul aplicatiei
                                 self?.userDetailsFromServer = resultFromJSON
+                                UserDefaults.standard.set(1, forKey: UserDefaultsKeys.isLoggedIn)
                                 self?.performSegue(withIdentifier: "toApp", sender: (Any).self)
                             }
                         }
@@ -234,6 +240,69 @@ extension LoginViewController : CLLocationManagerDelegate {
 
 
 extension LoginViewController : UITextFieldDelegate {
+    func logIn(){
+        let loadingScreen = UIViewController.displaySpinner(onView: self.view)
+        let mail = UserDefaults.standard.string(forKey: UserDefaultsKeys.savedEmail)
+        let parola = UserDefaults.standard.string(forKey: UserDefaultsKeys.savedPassword)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let token = appDelegate.instanceIDTokenMessage
+        var params = Dictionary<String, String>();
+        params["mail"] = mail
+        params["parola"] = parola
+        params["request"] = ServerRequestConstants.JSON.LOGIN_REQUEST_NUMBER
+        params["token"] = token
+        params["SO"] = "IOS"
+        
+        Services.loginService(params: params) { [weak self] result in
+            UIViewController.removeSpinner(spinner: loadingScreen)
+            switch result {
+            case .success(let json):
+                if let responseFromJSON = json.response,
+                    let messageFromJSON = json.msg,
+                    let resultFromJSON = json.result {
+                    
+                    switch messageFromJSON {
+                    case ServerRequestConstants.JSON.RESPONSE_ERROR :
+                        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+                            DispatchQueue.main.async {
+                                self?.loginButton.isEnabled = true
+                                AlertManager.showGenericDialog(responseFromJSON, viewController: self!)
+                                
+                            }
+                        }
+                    case ServerRequestConstants.JSON.RESPONSE_SUCCESS:
+                        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+                            DispatchQueue.main.async {
+                                self?.loginButton.isEnabled = true
+                                // salvezi resultFromJSON astfel incat el sa fie vizibil pe tot parcursul aplicatiei
+                                self?.userDetailsFromServer = resultFromJSON
+                                UserDefaults.standard.set(1, forKey: UserDefaultsKeys.isLoggedIn)
+                                self?.performSegue(withIdentifier: "toApp", sender: (Any).self)
+                            }
+                        }
+                    default:
+                        
+                        break
+                    }
+                } else {
+                    
+                    DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+                        DispatchQueue.main.async {
+                            self?.loginButton.isEnabled = true
+                            AlertManager.showGenericDialog(json.response!, viewController: self!)
+                        }
+                        
+                    }
+                }
+            case .error(let errorString):
+                print("errorString = \(errorString)")
+                
+                break
+                
+            }
+        }
+        
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         

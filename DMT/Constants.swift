@@ -14,6 +14,7 @@ struct UserDefaultsKeys {
     static let savedPassword = "passwordEmail"
     static let noEmail = ""
     static let noPassword = ""
+    static let isLoggedIn = "isLoggedIn"
 }
 
 

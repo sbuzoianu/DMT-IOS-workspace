@@ -102,3 +102,12 @@ extension UINavigationBar {
         }
     }
 }
+
+extension UIImageView
+{
+    func getFileName() -> String? {
+        let imgName = self.image?.accessibilityIdentifier
+        return imgName
+    }
+}
+

@@ -173,7 +173,6 @@
                                             </state>
                                             <connections>
                                                 <action selector="doneButton:" destination="nJl-JR-6vC" eventType="touchUpInside" id="NOx-de-At8"/>
-                                                <segue destination="YCR-zR-YSG" kind="showDetail" identifier="toApp" id="Jyz-je-Gug"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -201,11 +200,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="86Y-XU-R5f" id="foG-zR-bSx"/>
+                        <segue destination="YCR-zR-YSG" kind="showDetail" identifier="toApp" id="mq8-tf-6Jk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D34-ef-NUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="-720.08995502248877"/>
+            <point key="canvasLocation" x="196" y="-681"/>
         </scene>
         <!--LogInViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -1166,7 +1166,7 @@
         <image name="TextBox1" width="288" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jyz-je-Gug"/>
+        <segue reference="mq8-tf-6Jk"/>
         <segue reference="pHm-Aq-3a8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

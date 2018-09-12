@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public typealias Parameters = [String:String]
+public typealias Parameters = [String:Any]
 
 enum ServerRequestConstants {
     
@@ -23,6 +23,7 @@ enum ServerRequestConstants {
         static let AVATAR_CHANGE_URL = "http://students.doubleuchat.com/avatarchange.php"
         static let CLICKED_OFFER_URL = "http://students.doubleuchat.com/listofferdetails.php"
         static let CHANGE_SPECIALIZATION_URL = "http://students.doubleuchat.com/specializari.php"
+
     }
     
     
@@ -103,7 +104,7 @@ class ServerRequestManager: NSObject {
     private func createStringFromDictionary(dict: Parameters) -> String {
         var params = String()
         for (key, value) in dict {
-            params += "&" + (key as String) + "=" + (value as String);
+            params += "&" + (key as String) + "=" + (value as! String);
         }
         
         return params;

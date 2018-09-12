@@ -208,10 +208,9 @@ class LoginViewController: UIViewController {
                     
                 }
                 
-//                let nav = barViewControllers.viewControllers![0] as! UINavigationController
-//                let destinationViewController = nav.viewControllers[0] as! HomeViewController
-//                destinationViewController.userDetails = userDetailsFromServer
-                
+            } else if segueIdentifier == "chooseInterests" {
+                let selectInterestsViewController = segue.destination as! SelectInterestsViewController
+                selectInterestsViewController.userDetails = userDetailsFromServer
             }
 
         }

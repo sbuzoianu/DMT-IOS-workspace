@@ -171,6 +171,10 @@
                                             <state key="normal" title="DONE">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="doneButton:" destination="nJl-JR-6vC" eventType="touchUpInside" id="NOx-de-At8"/>
+                                                <segue destination="YCR-zR-YSG" kind="showDetail" identifier="toApp" id="Jyz-je-Gug"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1162,6 +1166,7 @@
         <image name="TextBox1" width="288" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Jyz-je-Gug"/>
         <segue reference="pHm-Aq-3a8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

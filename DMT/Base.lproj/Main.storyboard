@@ -410,6 +410,7 @@
                                             <constraint firstItem="2C4-Vd-iFC" firstAttribute="width" secondItem="GiU-ZR-J9R" secondAttribute="width" id="a7D-SW-XGQ"/>
                                             <constraint firstItem="3Z7-Ds-1ze" firstAttribute="width" secondItem="GiU-ZR-J9R" secondAttribute="width" id="iGL-YN-szQ"/>
                                             <constraint firstItem="97x-Vw-3bB" firstAttribute="leading" secondItem="GiU-ZR-J9R" secondAttribute="leading" id="qFG-Nb-Yad"/>
+                                            <constraint firstItem="3Z7-Ds-1ze" firstAttribute="top" secondItem="GiU-ZR-J9R" secondAttribute="top" id="sQp-KS-8uW"/>
                                             <constraint firstItem="3Z7-Ds-1ze" firstAttribute="centerX" secondItem="GiU-ZR-J9R" secondAttribute="centerX" id="zwh-rZ-J2E"/>
                                         </constraints>
                                     </view>
@@ -426,7 +427,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="WZM-oX-wiS" firstAttribute="top" secondItem="riP-BV-Iza" secondAttribute="top" id="AmT-bA-3Ud"/>
                             <constraint firstItem="WZM-oX-wiS" firstAttribute="width" secondItem="riP-BV-Iza" secondAttribute="width" id="B1T-FV-e2T"/>
+                            <constraint firstItem="WZM-oX-wiS" firstAttribute="bottom" secondItem="kH1-zD-Rti" secondAttribute="bottom" id="SA8-ab-Jgv"/>
                             <constraint firstItem="WZM-oX-wiS" firstAttribute="height" secondItem="riP-BV-Iza" secondAttribute="height" id="Z48-er-iAm"/>
                             <constraint firstItem="WZM-oX-wiS" firstAttribute="centerY" secondItem="riP-BV-Iza" secondAttribute="centerY" id="d9U-eJ-cS5"/>
                             <constraint firstItem="WZM-oX-wiS" firstAttribute="centerX" secondItem="riP-BV-Iza" secondAttribute="centerX" id="y5h-7B-d9R"/>
@@ -1166,7 +1169,7 @@
         <image name="TextBox1" width="288" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mq8-tf-6Jk"/>
+        <segue reference="jrg-Xl-MpY"/>
         <segue reference="pHm-Aq-3a8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

@@ -78,7 +78,7 @@ class LoginViewController: UIViewController {
                 
                 return
         }
-        let contentInset = UIEdgeInsets(top:0, left: 0, bottom: frame.height + 20, right:0)
+        let contentInset = UIEdgeInsets(top:0, left: 0, bottom: 20, right:0)
         userScrollView.contentInset = contentInset
         userScrollView.scrollIndicatorInsets = contentInset
     }
@@ -192,7 +192,10 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+//    override func viewDidLayoutSubviews() {
+//          userScrollView.setContentOffset(CGPoint.zero, animated: false)
+//    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let segueIdentifier = segue.identifier {

@@ -30,4 +30,18 @@ class AlertManager: NSObject {
         
     }
  
+    static func showGenericDialog(_ message: String, viewController: UIViewController, completionHandler: @escaping () -> Void ) {
+        
+        let alert = UIAlertController(title: "Wrenchy", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction: UIAlertAction = UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
+            completionHandler()
+            
+        })
+        alert.addAction(okAction)
+        OperationQueue.main.addOperation {
+            viewController.present(alert, animated: true, completion: nil)
+            
+        }
+        
+    }
 }

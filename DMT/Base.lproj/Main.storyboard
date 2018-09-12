@@ -121,6 +121,92 @@
             </objects>
             <point key="canvasLocation" x="2121" y="-627"/>
         </scene>
+        <!--Select Interests View Controller-->
+        <scene sceneID="WT0-qp-iYU">
+            <objects>
+                <viewController id="nJl-JR-6vC" customClass="SelectInterestsViewController" customModule="DMT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QGI-FQ-tDg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeBG" translatesAutoresizingMaskIntoConstraints="NO" id="xhW-2O-Io6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="86Y-XU-R5f">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="HJY-Vw-X8e">
+                                    <size key="itemSize" width="180" height="180"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="60"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="MHi-fL-c7q" customClass="SelectInterestsCollectionViewCell" customModule="DMT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq7-p0-SWK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="selectInterestsImageView" destination="Mq7-p0-SWK" id="p4j-1R-Zk6"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Footer" id="1TR-jT-EIV" customClass="SelectInterestsCollectionReusableView" customModule="DMT" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="180" width="375" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F57-Kw-lXQ">
+                                            <rect key="frame" x="8" y="8" width="359" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                            <state key="normal" title="DONE">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="doneButton:" destination="nJl-JR-6vC" eventType="touchUpInside" id="NOx-de-At8"/>
+                                                <segue destination="YCR-zR-YSG" kind="showDetail" identifier="toApp" id="Jyz-je-Gug"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="F57-Kw-lXQ" secondAttribute="bottom" id="Ctf-Tg-a1H"/>
+                                        <constraint firstItem="F57-Kw-lXQ" firstAttribute="leading" secondItem="1TR-jT-EIV" secondAttribute="leadingMargin" id="qF3-VG-eKd"/>
+                                        <constraint firstItem="F57-Kw-lXQ" firstAttribute="top" secondItem="1TR-jT-EIV" secondAttribute="topMargin" id="tVg-ud-yIR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="F57-Kw-lXQ" secondAttribute="trailing" id="v3e-UJ-5JJ"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="doneButton" destination="F57-Kw-lXQ" id="YUO-WJ-v4y"/>
+                                    </connections>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="86Y-XU-R5f" firstAttribute="top" secondItem="WzO-e7-SuT" secondAttribute="top" id="d2Z-0J-HBa"/>
+                            <constraint firstItem="WzO-e7-SuT" firstAttribute="trailing" secondItem="86Y-XU-R5f" secondAttribute="trailing" id="djj-56-na9"/>
+                            <constraint firstItem="86Y-XU-R5f" firstAttribute="leading" secondItem="WzO-e7-SuT" secondAttribute="leading" id="kdh-iG-54H"/>
+                            <constraint firstItem="WzO-e7-SuT" firstAttribute="bottom" secondItem="86Y-XU-R5f" secondAttribute="bottom" id="xnD-E3-ogf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WzO-e7-SuT"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="86Y-XU-R5f" id="foG-zR-bSx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D34-ef-NUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="196" y="-720.08995502248877"/>
+        </scene>
         <!--LogInViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -355,6 +441,7 @@
                         <outlet property="rememberSwitch" destination="RbJ-Yj-TWo" id="361-dq-dnM"/>
                         <outlet property="userScrollView" destination="WZM-oX-wiS" id="L6U-BO-8Oy"/>
                         <segue destination="YCR-zR-YSG" kind="showDetail" identifier="toApp" id="jrg-Xl-MpY"/>
+                        <segue destination="nJl-JR-6vC" kind="show" identifier="chooseInterests" id="QfC-Dx-zJf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1079,6 +1166,7 @@
         <image name="TextBox1" width="288" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Jyz-je-Gug"/>
         <segue reference="pHm-Aq-3a8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

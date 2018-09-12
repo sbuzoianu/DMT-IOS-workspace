@@ -24,8 +24,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         view.addGestureRecognizer(tapGesture)
+        
         emailField.delegate = self
         passwordField.delegate = self
+        
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){
@@ -163,7 +165,9 @@ class LoginViewController: UIViewController {
                                 self?.loginButton.isEnabled = true
                                 // salvezi resultFromJSON astfel incat el sa fie vizibil pe tot parcursul aplicatiei
                                 self?.userDetailsFromServer = resultFromJSON
-                                self?.performSegue(withIdentifier: "toApp", sender: (Any).self)
+                                self?.performSegue(withIdentifier: "chooseInterests", sender: (Any).self)
+
+//                                self?.performSegue(withIdentifier: "toApp", sender: (Any).self)
                             }
                         }
                     default:
@@ -204,10 +208,9 @@ class LoginViewController: UIViewController {
                     
                 }
                 
-//                let nav = barViewControllers.viewControllers![0] as! UINavigationController
-//                let destinationViewController = nav.viewControllers[0] as! HomeViewController
-//                destinationViewController.userDetails = userDetailsFromServer
-                
+            } else if segueIdentifier == "chooseInterests" {
+                let selectInterestsViewController = segue.destination as! SelectInterestsViewController
+                selectInterestsViewController.userDetails = userDetailsFromServer
             }
 
         }

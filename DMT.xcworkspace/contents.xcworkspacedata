@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/bozarares-dorian/Documents/DMT-IOS-workspace/DMT/Model/HybridOffers.swift">
+   </FileRef>
+   <FileRef
       location = "group:DMT.xcodeproj">
    </FileRef>
    <FileRef

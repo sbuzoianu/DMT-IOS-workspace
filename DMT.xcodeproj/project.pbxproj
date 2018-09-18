@@ -17,6 +17,7 @@
 		3C920CA32121944D00B3756F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C920CA22121944D00B3756F /* GoogleService-Info.plist */; };
 		3C9E9CD920DBA5100084ECA9 /* OffersResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9E9CD820DBA5100084ECA9 /* OffersResult.swift */; };
 		3CC833E021428A9C00D31AA1 /* SelectInterestsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC833DF21428A9B00D31AA1 /* SelectInterestsCollectionReusableView.swift */; };
+		42392DE621513C1B002E824D /* HybridOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42392DE521513C1B002E824D /* HybridOffers.swift */; };
 		423C035C20D8E01500351AC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C035B20D8E01500351AC4 /* ProfileViewController.swift */; };
 		4248014120ECD24F0051AF46 /* ClickedOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4248014020ECD24E0051AF46 /* ClickedOffer.swift */; };
 		424953D020A3188300396E8D /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424953CF20A3188300396E8D /* Toast.swift */; };
@@ -78,6 +79,7 @@
 		3C9E9CD820DBA5100084ECA9 /* OffersResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersResult.swift; sourceTree = "<group>"; };
 		3CC833DF21428A9B00D31AA1 /* SelectInterestsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInterestsCollectionReusableView.swift; sourceTree = "<group>"; };
 		3CEF1471EFDF80DB93266AA5 /* Pods_DMTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMTUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42392DE521513C1B002E824D /* HybridOffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HybridOffers.swift; path = "/Users/bozarares-dorian/Documents/DMT-IOS-workspace/DMT/Model/HybridOffers.swift"; sourceTree = "<absolute>"; };
 		423C035B20D8E01500351AC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4248014020ECD24E0051AF46 /* ClickedOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedOffer.swift; sourceTree = "<group>"; };
 		424953CF20A3188300396E8D /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				42FC3002209491DB00037E08 /* UserRegister.swift */,
 				4248014020ECD24E0051AF46 /* ClickedOffer.swift */,
+				42392DE521513C1B002E824D /* HybridOffers.swift */,
 				3C9E9CD820DBA5100084ECA9 /* OffersResult.swift */,
 				3C91B6F221413650001D3116 /* UserSpecialization.swift */,
 			);
@@ -555,6 +558,7 @@
 				5A5CEF77208F92CD0098B4E3 /* ServerRequestHelper.swift in Sources */,
 				94A1209B20FF992700B3C895 /* ClickedOfferDetailViewController.swift in Sources */,
 				426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */,
+				42392DE621513C1B002E824D /* HybridOffers.swift in Sources */,
 				5A25E6AC21186AD000C5F24B /* OffersViewController.swift in Sources */,
 				3C91B6F521415AA3001D3116 /* SelectInterestsCollectionViewCell.swift in Sources */,
 				3C91B6F721415B3E001D3116 /* SelectInterestsViewController.swift in Sources */,

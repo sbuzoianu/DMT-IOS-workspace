@@ -66,5 +66,12 @@ class Services {
                                                   url: ServerRequestConstants.URLS.CHANGE_SPECIALIZATION_URL ,
                                                   postCompleted: completionHandler )
     }
-
+    
+    static func getHybridOffers(params: Parameters, completionHandler: @escaping (FetchResult<HybridOffers>) -> Void){
+        
+        ServerRequestManager.instance.postRequest(params: params as Parameters,
+                                                  url: ServerRequestConstants.URLS.GET_HYBRID_OFFERS,
+                                                  postCompleted: completionHandler)
+        
+    }
 }

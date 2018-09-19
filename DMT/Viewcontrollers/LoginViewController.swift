@@ -22,6 +22,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var prefersStatusBarHidden: Bool{
+            return true
+        }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         view.addGestureRecognizer(tapGesture)
         
@@ -43,6 +46,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        UIApplication.shared.isStatusBarHidden = true
         let showKeyboard: (Notification) -> Void = { notification in
             self.keyboardWillShow(notification)
         }
@@ -65,6 +69,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        UIApplication.shared.isStatusBarHidden = false
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -78,7 +83,7 @@ class LoginViewController: UIViewController {
                 
                 return
         }
-        let contentInset = UIEdgeInsets(top:0, left: 0, bottom: 20, right:0)
+        let contentInset = UIEdgeInsets(top:0, left: 0, bottom: frame.height+20, right:0)
         userScrollView.contentInset = contentInset
         userScrollView.scrollIndicatorInsets = contentInset
     }

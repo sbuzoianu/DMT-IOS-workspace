@@ -11,6 +11,7 @@
 		1C91E7ED44805FB91E8B4643 /* Pods_DMTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEF1471EFDF80DB93266AA5 /* Pods_DMTUITests.framework */; };
 		3C4DC77C20D3CF7B0049BD21 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4DC77B20D3CF7B0049BD21 /* Services.swift */; };
 		3C8A657C20B692E20099B204 /* UltraWeekCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A657B20B692E20099B204 /* UltraWeekCalendar.m */; };
+		3C8DB30E21527F4B006C17F5 /* HybridOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DB30D21527F4A006C17F5 /* HybridOffers.swift */; };
 		3C91B6F321413650001D3116 /* UserSpecialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91B6F221413650001D3116 /* UserSpecialization.swift */; };
 		3C91B6F521415AA3001D3116 /* SelectInterestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91B6F421415AA3001D3116 /* SelectInterestsCollectionViewCell.swift */; };
 		3C91B6F721415B3E001D3116 /* SelectInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91B6F621415B3E001D3116 /* SelectInterestsViewController.swift */; };
@@ -70,6 +71,7 @@
 		3C4DC77B20D3CF7B0049BD21 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		3C8A657A20B692B10099B204 /* UltraWeekCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UltraWeekCalendar.h; sourceTree = "<group>"; };
 		3C8A657B20B692E20099B204 /* UltraWeekCalendar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltraWeekCalendar.m; sourceTree = "<group>"; };
+		3C8DB30D21527F4A006C17F5 /* HybridOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridOffers.swift; sourceTree = "<group>"; };
 		3C91B6F221413650001D3116 /* UserSpecialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSpecialization.swift; sourceTree = "<group>"; };
 		3C91B6F421415AA3001D3116 /* SelectInterestsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInterestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C91B6F621415B3E001D3116 /* SelectInterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInterestsViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		3C360D0220D2BB95002A90A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C8DB30D21527F4A006C17F5 /* HybridOffers.swift */,
 				42FC3002209491DB00037E08 /* UserRegister.swift */,
 				4248014020ECD24E0051AF46 /* ClickedOffer.swift */,
 				3C9E9CD820DBA5100084ECA9 /* OffersResult.swift */,
@@ -555,6 +558,7 @@
 				5A5CEF77208F92CD0098B4E3 /* ServerRequestHelper.swift in Sources */,
 				94A1209B20FF992700B3C895 /* ClickedOfferDetailViewController.swift in Sources */,
 				426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */,
+				3C8DB30E21527F4B006C17F5 /* HybridOffers.swift in Sources */,
 				5A25E6AC21186AD000C5F24B /* OffersViewController.swift in Sources */,
 				3C91B6F521415AA3001D3116 /* SelectInterestsCollectionViewCell.swift in Sources */,
 				3C91B6F721415B3E001D3116 /* SelectInterestsViewController.swift in Sources */,

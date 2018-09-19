@@ -14,6 +14,7 @@ public typealias Parameters = [String:Any]
 enum ServerRequestConstants {
     
     enum  URLS{
+        static let GET_HYBRID_OFFERS = "http://students.doubleuchat.com/gethybridoffers.php"
         static let LOGIN_TEXT_RESPONSE = "http://students.doubleuchat.com/list.php"
         static let LOGIN_BINARY_RESPONSE = "http://students.doubleuchat.com/list_bin.php"
         static let LOGIN_URL = "http://students.doubleuchat.com/login.php"

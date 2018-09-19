@@ -29,15 +29,16 @@ class HomeTabBar: UITabBar {
     }
     
     func setupMiddleButton() {
-        middleButton.frame.size = CGSize(width: 60, height: 60)
-        middleButton.backgroundColor = .blue
-        middleButton.layer.cornerRadius = 35
-        middleButton.layer.masksToBounds = true
-        middleButton.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: 0)
-        middleButton.addTarget(self, action: #selector(tapMiddleButton), for: .touchUpInside)
-        addSubview(middleButton)
+//        middleButton.frame.size = CGSize(width: 60, height: 60)
+//        middleButton.backgroundColor = .blue
+//        middleButton.layer.cornerRadius = 35
+//        middleButton.layer.masksToBounds = true
+//        middleButton.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: 0)
+//        middleButton.addTarget(self, action: #selector(tapMiddleButton), for: .touchUpInside)
+//        addSubview(middleButton)
     }
     
+
     @objc func tapMiddleButton() {
         print("sunt cel mai dragut middle button")
     }

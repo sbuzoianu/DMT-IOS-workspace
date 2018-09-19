@@ -9,20 +9,29 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    
+    let button = UIButton.init(type: .custom)
 
     override func viewDidLoad() {
-        /*
-        let middleButton = UIButton()
-        middleButton.frame.size = CGSize(width: 70, height: 70)
-        middleButton.backgroundColor = .blue
-        middleButton.layer.cornerRadius = 35
-        middleButton.layer.masksToBounds = true
-        middleButton.center = CGPoint(x: UIScreen.main.bounds.width / 2, y:
-        UIScreen.main.bounds.height - 40)
-        view.addSubview(middleButton)
-        */
+
+        button.setTitle("+", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.yellow, for: .highlighted)
+        button.backgroundColor = .red
+        button.layer.borderWidth = 3
+        button.layer.borderColor = UIColor.yellow.cgColor
+        self.view.insertSubview(button, aboveSubview: self.tabBar)
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let heightValue = CGFloat(50.0)
+        let widthValue = CGFloat(50.0)
+        button.frame = CGRect.init(x: self.tabBar.center.x - 32, y: self.view.bounds.height - 74, width: widthValue, height: heightValue)
+        button.layer.cornerRadius = button.frame.height/2
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
             }

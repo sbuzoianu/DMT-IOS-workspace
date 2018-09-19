@@ -36,6 +36,9 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate
         refreshControl.attributedTitle = NSAttributedString(string:"Fetching Offers")
         let secondTab = self.tabBarController?.viewControllers![1] as! ProfileViewController
         secondTab.userDetails = userDetails
+        let thirdTab = self.tabBarController?.viewControllers![2] as!
+        OffersViewController
+        thirdTab.userDetails = userDetails
         prepareCollectionView()
 
         // oferte aduse
@@ -240,6 +243,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         params["request"] = "1"
         params["id_user"] = userDetails?.idUser
         params["id_oferta"] = self.offerDetails[indexPath.item].idOferta
+        params["specializari"] = "['1','3']"
         
         Services.getOfferDetails(params: params) { [weak self] result in
             switch result {

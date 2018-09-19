@@ -14,25 +14,30 @@ class SelectInterestsViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func doneButton(_ sender: Any) {
-       
+        let paramInterestsArray = selectedInterestsValues.filter{$0 != "0"}
+        let paramInterestsString = paramInterestsArray.compactMap{ $0 }.joined(separator: ",")
+        
         var params = [String:Any]()
         
         params["request"] = "1"
         params["id_user"] = userDetails?.idUser
-        params["adaugare"] = "1" //["1","2"]
         params["stergere"] = ""
+        
+        print("paramInterestsArray = \(paramInterestsArray)") // paramInterestsArray = ["3", "9"]
+        print("csv = \(paramInterestsString)") // csv = 3,9
+        params["adaugare"] = paramInterestsString   //["1","2"]
 
         Services.chooseSpecializations(params: params) { [weak self] result in
             switch result {
             case .success(let json):
-                
+
                 guard let responseFromJSON = json.response else {
                     return
                 }
                 guard let messageFromJSON = json.msg else {
                     return
                 }
-                
+
                 switch messageFromJSON {
                 case ServerRequestConstants.JSON.RESPONSE_ERROR :
                     DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
@@ -43,23 +48,23 @@ class SelectInterestsViewController: UIViewController, UICollectionViewDelegate,
                 case ServerRequestConstants.JSON.RESPONSE_SUCCESS:
                     DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
                         DispatchQueue.main.async {
-                            
+
                             AlertManager.showGenericDialog("SUCCESS - Interests adding operation = \(responseFromJSON)", viewController: self!,completionHandler: {
                                     self?.performSegue(withIdentifier: "toApp", sender: (Any).self)
                                 print("BUBU")
                             })
-                            
+
                         }
                     }
                 default:
                     break
                 }
-                
+
             case .error(let errorString):
                 print("errorString = \(errorString)")
-                
+
                 break
-                
+
             }
         }
         
@@ -157,7 +162,7 @@ class SelectInterestsViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SelectInterestsCollectionViewCell
         
-        if selectedInterestsValues[indexPath.item] == "1" {
+        if selectedInterestsValues[indexPath.item] != "0" {
             cell.selectInterestsImageView.image = interestsImageSELECTED[indexPath.item]
             
         } else {
@@ -188,10 +193,10 @@ class SelectInterestsViewController: UIViewController, UICollectionViewDelegate,
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        if selectedInterestsValues[indexPath.item] == "1" {
+        if selectedInterestsValues[indexPath.item] != "0" {
             selectedInterestsValues[indexPath.item] = "0"
         } else {
-            selectedInterestsValues[indexPath.item] = "1"
+            selectedInterestsValues[indexPath.item] = String(indexPath.item+1)
 
         }
         print("selectedInterestsValues = \(selectedInterestsValues)")
